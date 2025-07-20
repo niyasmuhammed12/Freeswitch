@@ -16,11 +16,11 @@ This project implements a complete SIP-based VoIP phone system based on FreeSWIT
 
 ## 3. Features Implemented
 
-### Basic Features
+### Basic Features:
 - [x] SIP clients can successfully register, make, and receive calls between each other.
 - [x] An ESL client logs the start, answer, and end timestamps of every call to a log file (`logs/call_log.txt`).
 
-### Additional Features covered:
+### Additional Features:
 - [x] **Authentication**: SIP clients must authenticate with a username and password before registering.
 - [x] **NAT Traversal**: The FreeSWITCH configuration is set up to handle clients behind NAT.
 - [x] **Dockerization**: The entire project, including the FreeSWITCH server and the ESL logger script, is containerized using Docker and `docker-compose`.
@@ -153,7 +153,7 @@ This simple dialplan allows users in the `default` context to call each other.
 esl==0.8
 ```
 
-**B) ESL Script (`esl_script/esl_call_logger.py`)**
+**B) ESL Script (`esl_call_logger.py`)**
 *This is the Python code you requested. See the separate code block below this README.*
 
 ### Step 3: Create Docker Files
