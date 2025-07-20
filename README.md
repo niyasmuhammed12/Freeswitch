@@ -154,12 +154,12 @@ esl==0.8
 ```
 
 **B) ESL Script (`esl_call_logger.py`)**
-*This is the Python code you requested. See the separate code block below this README.*
+ *.See the separate code block below this README.*
 
 ### Step 3: Create Docker Files
 
 **A) Dockerfile (`Dockerfile`)**
-*This is the `Dockerfile` we developed previously, updated to copy your new configuration files.*
+*This is the `Dockerfile` , updated to copy configuration files.*
 
 ```dockerfile
 # Stage 1: The Builder
@@ -250,7 +250,7 @@ docker-compose up -d
 
 ### Step 5: Configure SIP Clients
 
-Configure two instances of your softphone (e.g., Zoiper) with the following details. Use your computer's local IP address or the public IP if deployed on the cloud.
+Configure two instances of softphone (e.g., Zoiper) with the following details. Use computer's local IP address or the public IP if deployed on the cloud ( i have deployed in aws cloud hence i could use public IP of the instance)
 
 **Client A:**
 * **Domain/Server:** `<Your_Server_IP>`
@@ -270,7 +270,7 @@ Configure two instances of your softphone (e.g., Zoiper) with the following deta
 2.  From Client A (user 1000), dial `1001`.
 3.  Client B (user 1001) should ring. Answer the call.
 4.  Speak for a few seconds, then hang up.
-5.  Check the log file `logs/call_log.txt` on your host machine. It will contain the start, answer, and end timestamps for the call.
+5.  Check the log file `logs/call_log.txt` on host machine. It will contain the start, answer, and end timestamps for the call.
 
     Example `call_log.txt` output:
     ```
@@ -285,9 +285,9 @@ Configure two instances of your softphone (e.g., Zoiper) with the following deta
 
 This Docker-based setup is ready for the cloud. The steps are:
 
-1.  **Provision a Cloud Server:** Get a virtual machine from any provider (AWS EC2, DigitalOcean, etc.). Ensure its security group or firewall allows traffic on the ports defined in `docker-compose.yml`.
+1.  **Provision a Cloud Server:** Get a virtual machine from any provider (AWS EC2, Azure, etc.). Ensure its security group or firewall allows traffic on the ports defined in `docker-compose.yml`.
 2.  **Install Docker:** Install Docker and Docker Compose on the server.
-3.  **Clone Repository:** Clone your project repository onto the server.
+3.  **Clone Repository:** Clone project repository onto the server.
 4.  **Update NAT Configuration:** **This is the most important step.** Edit `freeswitch_conf/sip_profiles/internal.xml` and replace `auto-nat` with the server's **public IP address**:
     ```xml
     <param name="ext-rtp-ip" value="YOUR_PUBLIC_IP_HERE"/>
