@@ -16,11 +16,11 @@ This project implements a complete SIP-based VoIP phone system based on FreeSWIT
 
 ## 3. Features Implemented
 
-### Basic Requirements
+### Basic Features
 - [x] SIP clients can successfully register, make, and receive calls between each other.
 - [x] An ESL client logs the start, answer, and end timestamps of every call to a log file (`logs/call_log.txt`).
 
-### Bonus Requirements
+### Additional Features covered:
 - [x] **Authentication**: SIP clients must authenticate with a username and password before registering.
 - [x] **NAT Traversal**: The FreeSWITCH configuration is set up to handle clients behind NAT.
 - [x] **Dockerization**: The entire project, including the FreeSWITCH server and the ESL logger script, is containerized using Docker and `docker-compose`.
